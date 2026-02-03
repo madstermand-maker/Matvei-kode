@@ -8,17 +8,24 @@ namespace RPG_kombineret
 {
     internal class Story
     {
+        //Mads: Vi har storyen som er det der kører det meste af spillet
         public void gamestory()
         {
+            //Mads: Vi oprette koden til spillet/inventoryet.
             Gamecode gamecode = new Gamecode();
+            //Mads: Vi vil gerne have man starter med en vandfalske så vi opretter en og tilføjer den til inventoryet.
             Items WaterBottle = new Items("Water bottle", ConsoleColor.Blue, 10);
             gamecode.inventory.Add(WaterBottle);
 
+            //Mads: Dette er en test til at prøve pickup systemet.
             Console.WriteLine("Du står foran et lig som har en taske");
+            //Mads: Vi opretter et æble
             Items apple = new Items("Apple", ConsoleColor.Green, 20);
+            //Mads: Så gemmer vi den som lootitem, fordi det kan så lootes af spilleren.
             gamecode.LootItem = apple;
             Items Pizza = new Items("Pizza", ConsoleColor.Yellow, 20);
             gamecode.LootItem2 = Pizza;
+            //Mads: Her kører vi muligheder(), så man kan loot, inventory og mere.
             gamecode.Muligheder();
             Console.WriteLine("Så går vi videre");
 
